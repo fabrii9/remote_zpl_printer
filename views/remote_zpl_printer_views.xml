@@ -1,0 +1,61 @@
+<odoo>
+    <menuitem id="menu_remote_zpl_root"
+              name="Remote ZPL"
+              sequence="10"/>
+
+    <record id="view_remote_zpl_printer_tree" model="ir.ui.view">
+        <field name="name">remote.zpl.printer.tree</field>
+        <field name="model">remote.zpl.printer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="printer_host"/>
+                <field name="printer_port"/>
+                <field name="token"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_remote_zpl_printer_form" model="ir.ui.view">
+        <field name="name">remote.zpl.printer.form</field>
+        <field name="model">remote.zpl.printer</field>
+        <field name="arch" type="xml">
+            <form string="Impresora ZPL remota">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="active"/>
+                        </group>
+                        <group>
+                            <field name="printer_host"/>
+                            <field name="printer_port"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="token"/>
+                            <field name="timeout"/>
+                        </group>
+                        <group>
+                            <field name="notes" colspan="2"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_remote_zpl_printer" model="ir.actions.act_window">
+        <field name="name">Impresoras ZPL remotas</field>
+        <field name="res_model">remote.zpl.printer</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_remote_zpl_printer"
+              name="Impresoras"
+              parent="menu_remote_zpl_root"
+              action="action_remote_zpl_printer"
+              sequence="10"/>
+</odoo>
