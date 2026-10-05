@@ -7,13 +7,13 @@
         <field name="name">remote.zpl.printer.tree</field>
         <field name="model">remote.zpl.printer</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="name"/>
                 <field name="printer_host"/>
                 <field name="printer_port"/>
                 <field name="token"/>
                 <field name="active"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -50,7 +50,7 @@
     <record id="action_remote_zpl_printer" model="ir.actions.act_window">
         <field name="name">Impresoras ZPL remotas</field>
         <field name="res_model">remote.zpl.printer</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
     </record>
 
     <menuitem id="menu_remote_zpl_printer"

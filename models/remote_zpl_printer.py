@@ -35,13 +35,10 @@ class RemoteZPLPrinter(models.Model):
     active = fields.Boolean(default=True)
     notes = fields.Text(string="Notas")
 
-    _sql_constraints = [
-        (
-            "token_unique",
-            "unique(token)",
-            "El token debe ser único por impresora remota.",
-        )
-    ]
+    _token_unique = models.Constraint(
+        "unique(token)",
+        "El token debe ser único por impresora remota.",
+    )
 
     @api.model
     def get_by_token(self, token):
