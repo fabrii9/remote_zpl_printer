@@ -1,5 +1,6 @@
 <odoo>
     <menuitem id="menu_remote_zpl_root"
+              web_icon="remote_zpl_printer,static/description/icon.png"
               name="Remote ZPL"
               sequence="10"/>
 
